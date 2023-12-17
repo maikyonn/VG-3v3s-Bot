@@ -1,4 +1,3 @@
-import { randomHero } from "./utilities/random";
 import { CommandInteraction, SlashCommandBuilder } from "discord.js";
 
 

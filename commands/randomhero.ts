@@ -1,5 +1,6 @@
-import { randomHero } from "./utilities/random";
+
 import { CommandInteraction, SlashCommandBuilder } from "discord.js";
+import { HeroCollection } from "./utilities/HeroCollection";
 
 
 const data = new SlashCommandBuilder()
@@ -7,7 +8,7 @@ const data = new SlashCommandBuilder()
     .setDescription('Suggests 1 random hero to play')
     
 async function execute(interaction: CommandInteraction) {
-    await interaction.reply(`You should play ${randomHero()}.`)
+    await interaction.reply(`You should play ${HeroCollection.randomHero()}.`)
 }
 
 

@@ -1,0 +1,5 @@
+{ "dependencies": { "discord.js": "^14.14.1" }, "name": "na-3v3s-bot", "module": "index.ts", "type": "module", "devDependencies": {
+  "bun-types": "latest"
+}, "peerDependencies": {
+  "typescript": "^5.0.0"
+} }

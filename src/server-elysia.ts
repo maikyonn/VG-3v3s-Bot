@@ -32,9 +32,10 @@ const app = new Elysia()
 		'/badlist',
 		async ({ body }) => {
 			await db.badPlayers.create({
-				data: body
-			}).then(response => {
-				console.log(response)
+				data: body,
+				select: {
+					username: true
+				}
 			})
 		},
 		{

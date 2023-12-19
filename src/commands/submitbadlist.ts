@@ -30,7 +30,7 @@ async function execute(interaction: ChatInputCommandInteraction) {
         kdratio: interaction.options.getString("kdratio") as string,
     }
     console.log(body)
-    
+
     const response = await fetch("/badlist", {
         method: "POST",
         body: body,

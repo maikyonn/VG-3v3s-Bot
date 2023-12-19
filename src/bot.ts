@@ -1,5 +1,5 @@
 import { Client, Collection, Events, GatewayIntentBits } from 'discord.js';
-import { clientId, guildId, token } from "./config.json"
+import { clientId, guildId, token } from "../config.json"
 const path = require('node:path');
 const fs = require('node:fs');
 

@@ -15,17 +15,20 @@ const data = new SlashCommandBuilder()
             .setDescription('Enter a Kill/Death Ratio (10/2)'))
 
 async function execute(interaction: ChatInputCommandInteraction) {
-    var requestOptions: RequestInit = {
+
+    var formdata = new FormData();
+    formdata.append("username", interaction.options.getString('username') as string | Blob);
+    formdata.append("rating", interaction.options.getInteger('rating')?.toString() as string | Blob);
+    formdata.append("kdratio", interaction.options.getString('kdratio') as string | Blob);
+
+    var requestOptions = {
         method: 'POST',
-        body: JSON.stringify({
-            "username": await interaction.options.getString('username') as string | Blob,
-            "rating": await interaction.options.getInteger('rating') as number | Blob,
-            "kdratio": await interaction.options.getString('kdratio') as string | Blob
-        }),
+        body: formdata,
         redirect: 'follow'
     };
+    console.log(requestOptions.body)
 
-    const response = await fetch("localhost:3000/badlist", requestOptions)
+    const response = await fetch("localhost:3000/badlist", requestOptions as RequestInit)
         .then(response => response.text())
         .then(result => {
             console.log(result)

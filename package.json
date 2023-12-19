@@ -5,7 +5,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "clear && bun run ./src/deploy-commands.ts && bun run --watch ./src/bot.ts",
-    "server": "clear && bun run ./src/server-elysia.ts"
+    "server": "clear && bun run --watch ./src/server-elysia.ts",
+    "migrate": "bunx prisma migrate dev --name v2"
   },
   "dependencies": {
     "@elysiajs/eden": "^0.7.7",

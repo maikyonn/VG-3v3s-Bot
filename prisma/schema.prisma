@@ -18,6 +18,6 @@ model BadPlayers {
   date DateTime   @default(now()) 
   
   username  String  
-  rating  Int
+  rating  Int?
   kdratio String?
 }
